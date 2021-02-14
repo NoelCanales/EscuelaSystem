@@ -10,6 +10,7 @@
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Habilitada</th>
+            <th>Opciones</th>
         </tr>
 
     </thead>
@@ -25,7 +26,7 @@
 
                 @if (item.Habilitada)
                 {
-                    <input type="checkbox" cheked="checked"/>
+                    <input type="checkbox" cheked="checked" />
 
                 }
                 else
@@ -34,7 +35,11 @@
                 }
 
             </td>
-
+            <td>
+                
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditMateria" asp-route="@item.Id">Editar</a>
+               
+            </td>
         </tr>
         }
 

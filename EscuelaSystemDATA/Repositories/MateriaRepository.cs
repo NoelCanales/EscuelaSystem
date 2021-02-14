@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EscuelaSystemDATA.Repositories
 {
-   public class MateriaRepository : Repository<Materia>, IMateriaRepository
+    public class MateriaRepository : Repository<Materia>, IMateriaRepository
     {
         private readonly ApplicationDbContext _db;
         public MateriaRepository(ApplicationDbContext db) : base(db)
