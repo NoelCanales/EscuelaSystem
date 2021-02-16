@@ -9,11 +9,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EscuelaSystemWeb.Pages
 {
-    public class EditarMateriaModel : PageModel
+
+    public class EliminarMateriaModel : PageModel
     {
         private readonly IMateriaRepository _materiaRepository;
 
-        public EditarMateriaModel(IMateriaRepository materiaRepository)
+        public EliminarMateriaModel(IMateriaRepository materiaRepository)
         {
             _materiaRepository = materiaRepository;
         }
@@ -23,7 +24,7 @@ namespace EscuelaSystemWeb.Pages
         public ActionResult OnGet(int id)
         {
             Materia = _materiaRepository.GetById(id);
-            if (Materia==null)
+            if (Materia == null)
             {
                 return NotFound();
             }
@@ -37,18 +38,18 @@ namespace EscuelaSystemWeb.Pages
                 return Page();
 
             }
-            var MateriaUpdate = _materiaRepository.GetById(id);
-            if (MateriaUpdate == null)
+            var MateriaDelete = _materiaRepository.GetById(id);
+            if (MateriaDelete == null)
             {
                 return NotFound();
 
-              
-            }
-                MateriaUpdate.Codigo = Materia.Codigo;
-                MateriaUpdate.Descripcion = Materia.Descripcion;
-                MateriaUpdate.Habilitada = Materia.Habilitada;
 
-            _materiaRepository.Update(MateriaUpdate);
+            }
+            MateriaDelete.Codigo = Materia.Codigo;
+            MateriaDelete.Descripcion = Materia.Descripcion;
+            MateriaDelete.Habilitada = Materia.Habilitada;
+
+            _materiaRepository.Delete(MateriaDelete);
 
             return RedirectToPage("./Materias");
         }

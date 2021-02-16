@@ -9,12 +9,11 @@ namespace EscuelaSystemDATA.Repositories
 {
     public class MateriaRepository : Repository<Materia>, IMateriaRepository
     {
-        private readonly ApplicationDbContext _db;
+        public readonly ApplicationDbContext _db;
         public MateriaRepository(ApplicationDbContext db) : base(db)
         {
-                    
-        }
 
+        }
         public void DeleteHabilitada()
         {
             var habilitadas = _db.Materias.Where(c => c.Habilitada == true).ToList();

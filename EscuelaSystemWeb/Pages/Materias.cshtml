@@ -3,7 +3,8 @@
 @{
 }
 <h1>Listado de Materias</h1>
-<table class="table table-bordered table-responsive" >
+
+<table class="table table-bordered table-responsive">
     <thead>
         <tr>
             <th>Id</th>
@@ -14,35 +15,41 @@
         </tr>
 
     </thead>
-   
+
     <tbody>
         @foreach (var item in Model.Materias)
         {
-        <tr>
-            <td>@item.Id</td>
-            <td>@item.Codigo</td>
-            <td>@item.Descripcion</td>
-            <td>
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Codigo</td>
+                <td>@item.Descripcion</td>
+                <td>
 
-                @if (item.Habilitada)
-                {
-                    <input type="checkbox" cheked="checked" />
+                    @if (item.Habilitada)
+                    {
+                        <div>Si</div>
 
-                }
-                else
-                {
-                    <input type="checkbox" cheked="checked"/>
-                }
+                    }
+                    else
+                    {
+                        <div>No</div>
+                    }
 
-            </td>
-            <td>
-                
-                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditMateria" asp-route="@item.Id">Editar</a>
-               
-            </td>
-        </tr>
+                </td>
+                <td>
+
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditarMateria" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-area="" asp-page="/EliminarMateria" asp-route-id="@item.Id">Eliminar</a>
+
+                </td>
+
+            </tr>
+
         }
 
     </tbody>
 
 </table>
+<br />
+<br>
+<a class="btn btn-sm btn-success btn-group-toggle" asp-page="./CrearMateria">Crear Materia</a>

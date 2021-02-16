@@ -6,12 +6,12 @@ using System.Text;
 
 namespace EscuelaSystemDATA.Interfaces
 {
-   public interface IRepository<T> where T: EntityBase
+   public interface IRepository<T> where T: IEntityTypeConfiguration
     {
         T GetById(int id);
-        IEnumerable<T>list();
+        IEnumerable<T>List();
 
-        IEnumerable<T>list(Expression<Func<T, bool>> predicate);
+        IEnumerable<T>List(Expression<Func<T, bool>> predicate);
         void Insert(T entity);
         void Update(T entiry);
         void Delete(T entiry);

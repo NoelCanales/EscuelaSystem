@@ -9,7 +9,7 @@ using System.Text;
 
 namespace EscuelaSystemDATA
 {
-    public class Repository<T> : IRepository<T> where T : EntityBase
+    public class Repository<T> : IRepository<T> where T : IEntityTypeConfiguration
     {
         private readonly ApplicationDbContext dbContext;
 
@@ -24,12 +24,12 @@ namespace EscuelaSystemDATA
         }
 
        
-        public virtual IEnumerable<T> list()
+        public virtual IEnumerable<T> List()
         {
             return dbContext.Set<T>().AsEnumerable();
         }
 
-        public virtual IEnumerable<T> list(Expression<Func<T, bool>> predicate)
+        public virtual IEnumerable<T> List(Expression<Func<T, bool>> predicate)
         {
             return dbContext.Set<T>()
                 .Where(predicate)

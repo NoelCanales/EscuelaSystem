@@ -5,12 +5,14 @@ using System.Text;
 
 namespace EscuelaSystemModels
 {
-    public class Materia : EntityBase
+    public class Materia : IEntityTypeConfiguration
     {
-        [Required(ErrorMessage ="El Campo Codigo de Materia no debe estar vacio")]
-        [MinLength(2, ErrorMessage ="El campo debe tener minimo 2 caracteres")] 
+        [Required(ErrorMessage = "El Campo Codigo de Materia no debe estar vacio")]
+        [MinLength(4, ErrorMessage = "El campo debe tener minimo 2 caracteres")]
         [MaxLength(10)]
-        [Display(Name ="Codigo de Materia")]
+        [Display(Name = "Codigo de Materia")]
+        //public int IdEstudiante { get; set; }
+        //public Alumno Alumno { get; set; }
         public String Codigo { get; set; }
         [Required(ErrorMessage = "El campo Nombre de Materia no debe estar vacio")]
         [MinLength(3, ErrorMessage = "El campo debe tener minimo 3 caracteres")]
@@ -19,5 +21,7 @@ namespace EscuelaSystemModels
         public String Descripcion { get; set; }
         [Required]
         public bool Habilitada { get; set; }
+
+    
     }
 }
