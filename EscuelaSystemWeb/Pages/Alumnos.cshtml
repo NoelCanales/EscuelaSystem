@@ -1,0 +1,47 @@
+﻿@page
+@model EscuelaSystemWeb.Pages.AlumnosModel
+@{
+}
+
+<h1>Listado de Materias</h1>
+
+<table class="table table-bordered table-responsive">
+    <thead>
+        <tr>
+            <th>IdEstudiante</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Carnet</th>
+            <th>Opciones</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Alumnos)
+        {
+            <tr>
+                <td>@item.IdEstudiante</td>
+                <td>@item.Nombre</td>
+                <td>@item.Apellido</td>
+                <td>@item.Carnet
+                </td>
+                <td>
+
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditarMateria" asp-route-id="@item.IdEstudiante">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-area="" asp-page="/EliminarMateria" asp-route-id="@item.IdEstudiante">Eliminar</a>
+
+                </td>
+
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+
+
+<br>
+<a class="btn btn-sm btn-success btn-group-toggle" asp-page="./CrearMateria">Crear Materia</a>

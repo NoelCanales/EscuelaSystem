@@ -14,7 +14,7 @@ namespace EscuelaSystemDATA
         }
 
         public DbSet<Materia> Materias { get; set; }
-        //public DbSet<Alumno> Alumnos { get; set; }
+        public DbSet<Alumno> Alumnos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
