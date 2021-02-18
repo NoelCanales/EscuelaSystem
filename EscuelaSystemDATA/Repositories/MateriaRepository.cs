@@ -16,7 +16,7 @@ namespace EscuelaSystemDATA.Repositories
         }
         public void DeleteHabilitada()
         {
-            var habilitadas = _db.Alumnos.ToList();
+            var habilitadas = _db.Materias.ToList();
             _db.SaveChanges();
         }
     }

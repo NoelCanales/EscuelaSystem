@@ -1,4 +1,5 @@
-﻿using EscuelaSystemDATA;
+﻿using EscuelaSystem.Data.Interfaces;
+using EscuelaSystemDATA;
 using EscuelaSystemDATA.Interfaces;
 using EscuelaSystemModels;
 using System;
@@ -16,9 +17,10 @@ public class AlumnoRepository : Repository<Alumno>, IAlumnoRepository
     {
 
     }
-    public void DeleteHabilitada()
+    public void Activo()
     {
-        var habilitadas = _db.Materias.Where(c => c.Habilitada == true).ToList();
+        var activos = _db.Alumnos.Where(c => c.Activo == true).ToList();
+        _db.RemoveRange(activos);
         _db.SaveChanges();
     }
 }

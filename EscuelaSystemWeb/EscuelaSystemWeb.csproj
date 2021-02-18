@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Alumnos.cshtml" />
+    <Content Remove="Pages\EditarAlumno.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,18 +21,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EscuelaSystemDATA\EscuelaSystemDATA.csproj" />
+    <ProjectReference Include="..\EscuelaSystemModels\EscuelaSystemModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Alumnos.cshtml" />
+    <UpToDateCheckInput Remove="Pages\EditarAlumno.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Alumnos.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\EditarAlumno.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Alumnos.cshtml" />
+    <None Include="Pages\EditarAlumno.cshtml" />
   </ItemGroup>
 
 </Project>

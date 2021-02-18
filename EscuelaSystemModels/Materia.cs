@@ -11,8 +11,7 @@ namespace EscuelaSystemModels
         [MinLength(4, ErrorMessage = "El campo debe tener minimo 2 caracteres")]
         [MaxLength(10)]
         [Display(Name = "Codigo de Materia")]
-        //public int IdEstudiante { get; set; }
-        //public Alumno Alumno { get; set; }
+       
         public String Codigo { get; set; }
         [Required(ErrorMessage = "El campo Nombre de Materia no debe estar vacio")]
         [MinLength(3, ErrorMessage = "El campo debe tener minimo 3 caracteres")]
